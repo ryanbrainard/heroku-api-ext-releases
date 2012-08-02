@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>heroku-api-parent</artifactId>
+        <groupId>com.heroku.api</groupId>
+        <version>0.13-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>heroku-api-ext-releases</artifactId>
+
+    <version>${parent.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.heroku.api</groupId>
+            <artifactId>heroku-api</artifactId>
+            <version>${heroku.jar.version}</version>
+        </dependency>
+
+        <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.heroku.api</groupId>
+            <artifactId>heroku-http-jersey-client</artifactId>
+            <version>${heroku.jar.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.heroku.api</groupId>
+            <artifactId>heroku-json-jersey-client</artifactId>
+            <version>${heroku.jar.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
