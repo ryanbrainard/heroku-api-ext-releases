@@ -7,12 +7,9 @@ import com.heroku.api.request.NewRelease;
 import com.heroku.api.request.ReleasesSlugInfo;
 import com.heroku.api.request.app.AppCreate;
 import com.heroku.api.request.app.AppDestroy;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.Future;
-
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author Ryan Brainard
