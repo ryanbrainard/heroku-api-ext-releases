@@ -1,19 +1,23 @@
 import com.heroku.api.App;
+import com.heroku.api.NewReleaseResponse;
 import com.heroku.api.SlugInfo;
 import com.heroku.api.connection.Connection;
 import com.heroku.api.connection.JerseyClientAsyncConnection;
+import com.heroku.api.request.NewRelease;
 import com.heroku.api.request.ReleasesSlugInfo;
 import com.heroku.api.request.app.AppCreate;
 import com.heroku.api.request.app.AppDestroy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.Future;
+
 import static org.testng.Assert.*;
 
 /**
  * @author Ryan Brainard
  */
-public class ReleasesSlugInfoIT {
+public class ReleasesIT {
 
     private String apiKey = System.getenv("HEROKU_API_KEY");
     private Connection connection = new JerseyClientAsyncConnection();
@@ -25,6 +29,17 @@ public class ReleasesSlugInfoIT {
             public void run(App app) throws Exception {
                 final SlugInfo slugInfo = connection.execute(new ReleasesSlugInfo(app.getName()), apiKey);
                 assertEquals(slugInfo.getSlugUrl(), null);
+            }
+        });
+    }
+
+    @Test
+    public void testReleaseNewSlug() throws Exception {
+        run(new AppRunnable() {
+            @Override
+            public void run(App app) throws Exception {
+                final NewReleaseResponse newReleaseResponse = connection.execute(new NewRelease(app.getName()), apiKey);
+                System.out.println(newReleaseResponse);
             }
         });
     }
@@ -42,4 +57,5 @@ public class ReleasesSlugInfoIT {
     interface AppRunnable {
         void run(App app) throws Exception;
     }
+
 }
