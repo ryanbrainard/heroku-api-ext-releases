@@ -1,10 +1,10 @@
 import com.heroku.api.App;
-import com.heroku.api.NewReleaseResponse;
-import com.heroku.api.SlugInfo;
+import com.heroku.api.releases.NewReleaseResponse;
+import com.heroku.api.releases.SlugInfo;
 import com.heroku.api.connection.Connection;
 import com.heroku.api.connection.JerseyClientAsyncConnection;
-import com.heroku.api.request.NewRelease;
-import com.heroku.api.request.ReleasesSlugInfo;
+import com.heroku.api.releases.NewRelease;
+import com.heroku.api.releases.ReleasesSlugInfo;
 import com.heroku.api.request.app.AppCreate;
 import com.heroku.api.request.app.AppDestroy;
 import org.testng.annotations.Test;

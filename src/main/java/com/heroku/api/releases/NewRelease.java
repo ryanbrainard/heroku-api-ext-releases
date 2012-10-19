@@ -1,11 +1,12 @@
-package com.heroku.api.request;
+package com.heroku.api.releases;
 
 import com.heroku.api.Heroku;
-import com.heroku.api.NewReleaseResponse;
+import com.heroku.api.releases.NewReleaseResponse;
 import com.heroku.api.exception.HerokuAPIException;
 import com.heroku.api.exception.RequestFailedException;
 import com.heroku.api.http.Http;
 import com.heroku.api.http.HttpUtil;
+import com.heroku.api.request.Request;
 
 import java.util.Collections;
 import java.util.Map;

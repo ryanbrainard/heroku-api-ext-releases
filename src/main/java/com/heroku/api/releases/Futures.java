@@ -1,4 +1,4 @@
-package com.heroku.api;
+package com.heroku.api.releases;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;

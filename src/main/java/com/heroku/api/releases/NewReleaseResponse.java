@@ -1,4 +1,4 @@
-package com.heroku.api;
+package com.heroku.api.releases;
 
 /**
  * @author Ryan Brainard
